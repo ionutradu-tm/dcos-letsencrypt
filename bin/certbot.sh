@@ -24,6 +24,7 @@ fi
 sed -i 's/listen 80/listen '"${NGINX_PORT}"'/g' /etc/nginx/sites-available/default
 nginx &
 
+mkdir -p /var/lib/letsencrypt
 
 certbot certonly -n --standalone -w /var/lib/letsencrypt \
 --agree-tos -m ${EMAIL} \
