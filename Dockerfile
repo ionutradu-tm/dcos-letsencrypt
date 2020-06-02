@@ -7,5 +7,6 @@ RUN  apt-get update \
 EXPOSE 80
 
 COPY bin/certbot.sh /run.sh
+RUN chmod +x /run.sh
 
 ENTRYPOINT ["/run.sh"]
